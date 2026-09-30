@@ -1,5 +1,7 @@
 import { configurarFormulario } from "./formulario.js";
 
+import imagemOng from "../imagens/ong.webp";
+
 const app = document.querySelector("#app");
 
 function renderizarInicio() {
@@ -12,6 +14,11 @@ function renderizarInicio() {
                 através de cursos gratuitos, visando ajudar diferentes tipos de
                 públicos com diferentes necessidades.
             </p>
+
+            <img
+                src="${imagemOng}"
+                alt="Projetos de educação acessível para pessoas com deficiências visuais, auditivas e motoras e pessoas com dificuldades de aprendizado"
+            >
         </section>
     `;
 }

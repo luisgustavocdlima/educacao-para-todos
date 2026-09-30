@@ -148,6 +148,11 @@ main {
     gap: var(--espacamento-4);
 }
 
+#app {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
 section {
      background-color: var(--fundo-secao);
     padding: var(--espacamento-5);
