@@ -53,9 +53,9 @@ function renderizarProjetos() {
 function renderizarCadastro() {
     app.innerHTML = `
         <section>
-            <h1>Cadastro</h1>
+            <h1 id="titulo-cadastro">Cadastro</h1>
 
-            <form>
+            <form aria-labelledby="titulo-cadastro">
                 <fieldset>
                     <legend>Dados pessoais</legend>
 
@@ -188,4 +188,16 @@ links.forEach(function(link) {
             renderizarCadastro();
         }
     });
+});
+
+const botaoTema = document.querySelector("#alternar-tema");
+
+botaoTema.addEventListener("click", function() {
+    document.body.classList.toggle("modo-escuro");
+
+    if (document.body.classList.contains("modo-escuro")) {
+        botaoTema.textContent = "Modo claro";
+    } else {
+        botaoTema.textContent = "Modo escuro";
+    }
 });
