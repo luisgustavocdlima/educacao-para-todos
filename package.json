@@ -2,7 +2,6 @@
   "name": "educacao-para-todos",
   "version": "1.0.0",
   "description": "Site institucional da ONG Educação para Todos.",
-  "main": "index.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -11,7 +10,6 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "devDependencies": {
     "vite": "^8.3.1"
   }
