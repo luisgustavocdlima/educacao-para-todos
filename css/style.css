@@ -13,6 +13,10 @@
     --verde-sucesso: #2E7D32;
     --vermelho-erro: #C62828;
 
+    --fundo-principal: #F2F2F2;
+    --fundo-secao: #FFFFFF;
+    --texto-principal: #333333;
+
     /* Tipografia */
     --fonte-pequena: 0.875rem;
     --fonte-corpo: 1rem;
@@ -37,8 +41,8 @@ body {
     margin: 0;
     font-family: Arial, sans-serif;
     font-size: var(--fonte-corpo);
-    color: var(--cinza-escuro);
-    background-color: var(--cinza-claro);
+    color: var(--texto-principal);
+    background-color: var(--fundo-principal);
 }
 
 /* Flexbox 1 - Cabeçalho */
@@ -144,14 +148,44 @@ main {
     gap: var(--espacamento-4);
 }
 
+#app {
+    grid-column: 1 / -1;
+    width: 100%;
+}
+
 section {
-    background-color: var(--branco);
+     background-color: var(--fundo-secao);
     padding: var(--espacamento-5);
     margin-bottom: var(--espacamento-4);
     border-radius: 8px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 
     grid-column: span 12;
+}
+
+body.modo-escuro {
+    --fundo-principal: #121212;
+    --fundo-secao: #1E1E1E;
+    --texto-principal: #F5F5F5;
+}
+
+body.modo-escuro h1 {
+    color: #BFDFFF;
+}
+
+body.modo-escuro h2 {
+    color: #80BFFF;
+}
+
+body.modo-escuro form input {
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+    border-color: #AAAAAA;
+}
+
+body.modo-escuro #alternar-tema {
+    background-color: #FFFFFF;
+    color: #121212;
 }
 
 h1 {
@@ -271,6 +305,12 @@ form input:invalid:not(:placeholder-shown) {
     border: 2px solid var(--vermelho-erro);
 }
 
+body.modo-escuro form input {
+    background-color: #2A2A2A;
+    color: #FFFFFF;
+    border-color: #AAAAAA;
+}
+
 /* Botão */
 
 button {
@@ -303,6 +343,11 @@ button:disabled {
     background-color: var(--cinza-medio);
     color: var(--cinza-escuro);
     cursor: not-allowed;
+}
+
+body.modo-escuro #alternar-tema {
+    background-color: #FFFFFF;
+    color: #121212;
 }
 
 /* Menu mobile */

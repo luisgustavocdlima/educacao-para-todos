@@ -42,20 +42,28 @@ export function configurarFormulario() {
     formulario.addEventListener("submit", function(event) {
         event.preventDefault();
 
-        if (!formulario.checkValidity()) {
-            const campoInvalido = formulario.querySelector(":invalid");
+if (!formulario.checkValidity()) {
+    document.querySelector(".mensagem-erro")?.remove();
 
-            campoInvalido.style.border = "2px solid var(--vermelho-erro)";
+    formulario.querySelectorAll("[aria-invalid='true']").forEach(function(campo) {
+        campo.removeAttribute("aria-invalid");
+        campo.removeAttribute("aria-describedby");
+        campo.style.border = "";
+    });
 
-            if (!document.querySelector(".mensagem-erro")) {
-                campoInvalido.insertAdjacentHTML(
-                    "afterend",
-                    '<p class="mensagem-erro">Verifique este campo antes de enviar.</p>'
-                );
-            }
+    const campoInvalido = formulario.querySelector(":invalid");
 
-            return;
-        }
+    campoInvalido.style.border = "2px solid var(--vermelho-erro)";
+    campoInvalido.setAttribute("aria-invalid", "true");
+    campoInvalido.setAttribute("aria-describedby", "erro-formulario");
+
+    campoInvalido.insertAdjacentHTML(
+        "afterend",
+        '<p id="erro-formulario" class="mensagem-erro" role="alert">Verifique este campo antes de enviar.</p>'
+    );
+
+    return;
+}
 
         const contribuicao = document.querySelector(
             'input[name="contribuicao"]:checked'
