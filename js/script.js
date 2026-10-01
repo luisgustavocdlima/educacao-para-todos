@@ -1,5 +1,7 @@
 import { configurarFormulario } from "./formulario.js";
 
+import imagemOng from "../imagens/ong.webp";
+
 const app = document.querySelector("#app");
 
 function renderizarInicio() {
@@ -12,6 +14,11 @@ function renderizarInicio() {
                 através de cursos gratuitos, visando ajudar diferentes tipos de
                 públicos com diferentes necessidades.
             </p>
+
+            <img
+                src="${imagemOng}"
+                alt="Projetos de educação acessível para pessoas com deficiências visuais, auditivas e motoras e pessoas com dificuldades de aprendizado"
+            >
         </section>
     `;
 }
@@ -53,9 +60,9 @@ function renderizarProjetos() {
 function renderizarCadastro() {
     app.innerHTML = `
         <section>
-            <h1>Cadastro</h1>
+            <h1 id="titulo-cadastro">Cadastro</h1>
 
-            <form>
+            <form aria-labelledby="titulo-cadastro">
                 <fieldset>
                     <legend>Dados pessoais</legend>
 
@@ -188,4 +195,16 @@ links.forEach(function(link) {
             renderizarCadastro();
         }
     });
+});
+
+const botaoTema = document.querySelector("#alternar-tema");
+
+botaoTema.addEventListener("click", function() {
+    document.body.classList.toggle("modo-escuro");
+
+    if (document.body.classList.contains("modo-escuro")) {
+        botaoTema.textContent = "Modo claro";
+    } else {
+        botaoTema.textContent = "Modo escuro";
+    }
 });

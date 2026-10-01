@@ -4,15 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Educação para Todos</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 <body>
 
     <header>
         <p>Educação para Todos</p>
+
+        <button id="alternar-tema" type="button">
+            Modo escuro
+        </button>
     </header>
 
-    <nav>
+    <nav aria-label="Navegação principal">
         <input type="checkbox" id="menu-toggle">
         <label for="menu-toggle" class="menu-icon">☰</label>
 
@@ -34,10 +38,10 @@
     </nav>
 
     <main>
-        <div id="app"></div>
+        <div id="app" aria-live="polite" aria-atomic="true"></div>
     </main>
 
-    <script type="module" src="../js/script.js"></script>
+    <script type="module" src="./js/script.js"></script>
 
 </body>
 </html>
