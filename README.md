@@ -120,4 +120,9 @@ A primeira versão estável foi publicada como:
 
 ## Deploy
 
-A aplicação será publicada em ambiente de produção após a conclusão da configuração de deploy.
+A aplicação está publicada em ambiente de produção por meio do Netlify.
+
+URL pública:
+https://gleeful-cendol-ff1ad5.netlify.app/
+
+O deploy utiliza a branch `master` como fonte, executa `npm run build` e publica o conteúdo gerado pelo Vite no diretório `dist`.
