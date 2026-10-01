@@ -42,28 +42,46 @@ export function configurarFormulario() {
     formulario.addEventListener("submit", function(event) {
         event.preventDefault();
 
-if (!formulario.checkValidity()) {
-    document.querySelector(".mensagem-erro")?.remove();
+        if (!formulario.checkValidity()) {
+            document.querySelector(".mensagem-erro")?.remove();
 
-    formulario.querySelectorAll("[aria-invalid='true']").forEach(function(campo) {
-        campo.removeAttribute("aria-invalid");
-        campo.removeAttribute("aria-describedby");
-        campo.style.border = "";
-    });
+            formulario
+                .querySelectorAll("[aria-invalid='true']")
+                .forEach(function(campo) {
+                    campo.removeAttribute("aria-invalid");
+                    campo.removeAttribute("aria-describedby");
+                    campo.style.border = "";
+                });
 
-    const campoInvalido = formulario.querySelector(":invalid");
+            const campoInvalido = formulario.querySelector(":invalid");
 
-    campoInvalido.style.border = "2px solid var(--vermelho-erro)";
-    campoInvalido.setAttribute("aria-invalid", "true");
-    campoInvalido.setAttribute("aria-describedby", "erro-formulario");
+            campoInvalido.style.border =
+                "2px solid var(--vermelho-erro)";
 
-    campoInvalido.insertAdjacentHTML(
-        "afterend",
-        '<p id="erro-formulario" class="mensagem-erro" role="alert">Verifique este campo antes de enviar.</p>'
-    );
+            campoInvalido.setAttribute("aria-invalid", "true");
+            campoInvalido.setAttribute(
+                "aria-describedby",
+                "erro-formulario"
+            );
 
-    return;
-}
+            campoInvalido.insertAdjacentHTML(
+                "afterend",
+                '<p id="erro-formulario" class="mensagem-erro" role="alert">Verifique este campo antes de enviar.</p>'
+            );
+
+            return;
+        }
+
+        // Remove estados de erro anteriores após uma submissão válida.
+        document.querySelector(".mensagem-erro")?.remove();
+
+        formulario
+            .querySelectorAll("[aria-invalid='true']")
+            .forEach(function(campo) {
+                campo.removeAttribute("aria-invalid");
+                campo.removeAttribute("aria-describedby");
+                campo.style.border = "";
+            });
 
         const contribuicao = document.querySelector(
             'input[name="contribuicao"]:checked'

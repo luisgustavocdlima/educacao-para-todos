@@ -154,7 +154,7 @@ main {
 }
 
 section {
-     background-color: var(--fundo-secao);
+    background-color: var(--fundo-secao);
     padding: var(--espacamento-5);
     margin-bottom: var(--espacamento-4);
     border-radius: 8px;
@@ -162,6 +162,8 @@ section {
 
     grid-column: span 12;
 }
+
+/* Modo escuro */
 
 body.modo-escuro {
     --fundo-principal: #121212;
@@ -198,7 +200,6 @@ h2 {
     font-size: var(--fonte-titulo);
     color: var(--azul-principal);
 }
-
 
 /* Badges */
 
@@ -238,27 +239,6 @@ section img {
     height: auto;
     display: block;
     margin: 0 auto;
-}
-
-/* Toast */
-
-.toast {
-    position: fixed;
-    right: var(--espacamento-4);
-    bottom: var(--espacamento-4);
-
-    background-color: var(--azul-escuro);
-    color: var(--branco);
-
-    padding: var(--espacamento-3) var(--espacamento-4);
-    border-radius: 8px;
-
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-
-    font-size: var(--fonte-corpo);
-    font-weight: bold;
-
-    z-index: 30;
 }
 
 form {
