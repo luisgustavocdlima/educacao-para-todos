@@ -83,7 +83,5 @@ if (!formulario.checkValidity()) {
         };
 
         salvarCadastro(dadosCadastro);
-
-        console.log(carregarCadastro());
     });
 }

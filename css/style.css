@@ -305,12 +305,6 @@ form input:invalid:not(:placeholder-shown) {
     border: 2px solid var(--vermelho-erro);
 }
 
-body.modo-escuro form input {
-    background-color: #2A2A2A;
-    color: #FFFFFF;
-    border-color: #AAAAAA;
-}
-
 /* Botão */
 
 button {
@@ -343,11 +337,6 @@ button:disabled {
     background-color: var(--cinza-medio);
     color: var(--cinza-escuro);
     cursor: not-allowed;
-}
-
-body.modo-escuro #alternar-tema {
-    background-color: #FFFFFF;
-    color: #121212;
 }
 
 /* Menu mobile */
